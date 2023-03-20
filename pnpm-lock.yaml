@@ -1,0 +1,48 @@
+lockfileVersion: 5.4
+
+importers:
+
+  .:
+    specifiers:
+      typescript: ^5.0.2
+    devDependencies:
+      typescript: registry.npmjs.org/typescript/5.0.2
+
+  examples/xcompile:
+    specifiers:
+      '@mono/cache': workspace:^1.0.0
+      '@mono/logger': workspace:^1.0.0
+      '@types/node': ^18.15.3
+    dependencies:
+      '@mono/cache': link:../../packages/cache
+      '@mono/logger': link:../../packages/logger
+    devDependencies:
+      '@types/node': registry.npmjs.org/@types/node/18.15.3
+
+  packages/cache:
+    specifiers:
+      '@types/node': ^18.15.3
+    devDependencies:
+      '@types/node': registry.npmjs.org/@types/node/18.15.3
+
+  packages/logger:
+    specifiers:
+      '@types/node': ^18.15.3
+    devDependencies:
+      '@types/node': registry.npmjs.org/@types/node/18.15.3
+
+packages:
+
+  registry.npmjs.org/@types/node/18.15.3:
+    resolution: {integrity: sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/node/-/node-18.15.3.tgz}
+    name: '@types/node'
+    version: 18.15.3
+    dev: true
+
+  registry.npmjs.org/typescript/5.0.2:
+    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/typescript/-/typescript-5.0.2.tgz}
+    name: typescript
+    version: 5.0.2
+    engines: {node: '>=12.20'}
+    hasBin: true
+    dev: true

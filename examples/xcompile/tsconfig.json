@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // "composite": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "paths": {
+      "@mono/logger": ["../../packages/logger/src"],
+      "@mono/cache": ["../../packages/cache/src"]
+    }
+  },
+  "references": [
+    { "path": "../../packages/cache" },
+    { "path": "../../packages/logger" }
+  ],
+  "include": ["src"]
+}
