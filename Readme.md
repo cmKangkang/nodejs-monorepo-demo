@@ -1,6 +1,20 @@
 # readme
 
-## 交叉编译
+## 快速开始
+
+```bash
+pnpm i
+```
+
+## changeset
+
+```bash
+# changeset init
+pnpm changeset init
+pnpm changeset
+```
+
+## 交叉（依赖）编译
 
 假设有monorepo结构如下：
 
@@ -64,6 +78,3 @@ xcompile、cache、logger 均为 typescript 项目，xcompile 项目依赖 cache
    npx tsc --build
    ```
    `--build` 配置必须添加，不然不会编译依赖项。
-
-## 发布
-
