@@ -78,3 +78,11 @@ xcompile、cache、logger 均为 typescript 项目，xcompile 项目依赖 cache
    npx tsc --build
    ```
    `--build` 配置必须添加，不然不会编译依赖项。
+
+
+# todo
+
+1. 增加 lint
+2. 增加 测试
+3. 增加 commitlint
+

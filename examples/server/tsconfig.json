@@ -5,11 +5,13 @@
     "rootDir": "src",
     "outDir": "dist",
     "paths": {
-      "@mono/common": ["../../packages/common/src"]
+      "@mono/logger": ["../../packages/logger/src"],
+      "@mono/cache": ["../../packages/cache/src"]
     }
   },
   "references": [
-    { "path": "../../packages/common" },
+    { "path": "../../packages/cache" },
+    { "path": "../../packages/logger" }
   ],
   "include": ["src"]
 }

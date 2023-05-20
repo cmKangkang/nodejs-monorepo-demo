@@ -17,7 +17,6 @@
     "@types/node": "^18.15.3"
   },
   "dependencies": {
-    "@mono/cache": "workspace:^1.0.0",
-    "@mono/logger": "workspace:^1.0.0"
+    "@mono/common": "workspace:*"
   }
 }

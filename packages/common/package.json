@@ -1,0 +1,32 @@
+{
+  "name": "@mono/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "exports": {
+    "types": "./dist/lib/index.d.ts",
+    "require": "./dist/lib/index.js",
+    "typings": "./dist/es/index.d.ts",
+    "import": "./dist/es/index.js"
+  },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "build:web": "npx tsc -p ./tsconfig.web.json",
+    "build:node": "npx tsc -p ./tsconfig.json",
+    "build": "npm run clean && (npm run build:web & npm run build:node)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-typescript": "^7.21.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@types/node": "^18.15.3"
+  }
+}

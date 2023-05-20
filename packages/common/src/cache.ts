@@ -4,11 +4,11 @@ interface CacheData {
   data: any
 }
 
-interface RecordData extends CacheData {
+export interface RecordData extends CacheData {
   timer?: ReturnType<typeof setTimeout>
 }
 
-class Cache {
+export class Cache {
   cache: Map<CacheKey, RecordData>
 
   constructor() {
