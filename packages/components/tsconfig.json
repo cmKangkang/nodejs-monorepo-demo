@@ -9,7 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "jsx": "react",
-    "outDir": "es",
+    "outDir": "dist",
     "isolatedModules": false,
     "resolveJsonModule": true,
     // "paths": {
