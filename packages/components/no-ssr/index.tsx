@@ -7,7 +7,7 @@ export interface NoSSRProps {
 
 const DefaultOnSSR = () => <></>
 
-export class ClassNoSSR extends Component<NoSSRProps> {
+export class C extends Component<NoSSRProps> {
   constructor(props: NoSSRProps) {
     super(props)
   }
@@ -30,7 +30,7 @@ export class ClassNoSSR extends Component<NoSSRProps> {
   }
 }
 
-export const HooksNoSSR: FC<NoSSRProps> = (props) => {
+export const H: FC<NoSSRProps> = (props) => {
   const { children, onSSR } = props
   const [canRender, setCanrender] = useState(false)
   const OnSSR = onSSR ? () => <>{onSSR}</> : DefaultOnSSR

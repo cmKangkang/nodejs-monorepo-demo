@@ -11,10 +11,11 @@
     "jsx": "react",
     "outDir": "es",
     "isolatedModules": false,
-    "paths": {
-      "tslib": ["./node_modules/tslib/tslib.d.ts"]
-    }
+    "resolveJsonModule": true,
+    // "paths": {
+    //   "tslib": ["./node_modules/tslib/tslib.d.ts"]
+    // }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "rollup.config.js", "rollup.config.js"],
   "exclude": ["node_modules", "dist", "es"]
 }
