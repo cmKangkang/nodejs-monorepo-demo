@@ -8,10 +8,66 @@ pnpm i
 
 ## changeset
 
+### 配置
+
+将 changeset 安装到工作空间根目录
+
 ```bash
-# changeset init
+pnpm add -Dw @changesets/cli
+```
+
+初始化 changeset
+
+```bash
 pnpm changeset init
+```
+
+如此将生成 `.changeset` 目录。
+
+### 添加变更
+
+当完成一个版本的开发，需要生成新的变更时，可在工作空间根目录执行
+
+```bash
 pnpm changeset
+```
+
+选择合适的选项，回车确定后，`.changeset` 目录中将生成记录变更的md文件，用于后续消费。
+
+### 发布变更
+
+在 changeset 根目录中执行
+
+```bash
+# 根据 semver 规则提升版本，消耗 .changeset 中的记录文件，生成 changelog。
+pnpm  changeset version
+
+# 更新锁文件，重新构建包
+pnpm install
+
+# 提交更改到仓库
+
+# 发布
+pnpm changeset publish
+```
+
+该操作将为工作目录中尚未发布操作的包执行发布操作，并生成 changelog。
+默认发包至 <https://registry.npmjs.org/>，若需更改发包仓库，可配置 `npm_config_registry` 环境变量
+
+```bash
+npm_config_registry=https://registry.npmmirror.com/ pnpm changeset publish
+```
+
+或在 `package.json` 中配置 `publishConfig` 配置项
+
+```json
+{
+   // ...
+   "publishConfig": {
+      "registry": "https://r.cnpmjs.org"
+   },
+   // ...
+}
 ```
 
 ## 交叉（依赖）编译
