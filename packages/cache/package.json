@@ -1,6 +1,6 @@
 {
   "name": "@mono/cache",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "mono cache util",
   "main": "./lib/index.js",
   "exports": "./lib/index.js",

@@ -1,6 +1,6 @@
 {
-  "name": "@mono/example-xcompile",
-  "version": "1.0.0",
+  "name": "@mono/xcompile",
+  "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
   "exports": {
@@ -32,7 +32,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "@mono/cache": "workspace:^1.0.0",
-    "@mono/logger": "workspace:^1.0.0"
+    "@mono/cache": "workspace:*",
+    "@mono/logger": "workspace:*"
   }
 }
