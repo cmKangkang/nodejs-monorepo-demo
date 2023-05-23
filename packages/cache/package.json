@@ -1,15 +1,19 @@
 {
   "name": "@mono/cache",
   "version": "1.0.0",
-  "description": "",
+  "description": "mono cache util",
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "jest",
     "build": "npx tsc",
     "clean": "rimraf ./lib tsconfig.tsbuildinfo",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",

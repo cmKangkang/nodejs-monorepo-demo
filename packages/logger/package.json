@@ -1,15 +1,17 @@
 {
   "name": "@mono/logger",
   "version": "1.0.0",
-  "description": "",
+  "description": "mono logger util",
   "main": "./lib/index.js",
   "exports": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "files": ["lib"],
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
     "build": "npx tsc",
     "clean": "rimraf ./lib tsconfig.tsbuildinfo",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "",
