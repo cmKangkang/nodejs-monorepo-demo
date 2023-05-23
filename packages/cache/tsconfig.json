@@ -8,5 +8,6 @@
       "@mono/cache/*": ["../cache/src/*"],
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/__test__", "**/test"]
 }

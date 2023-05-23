@@ -8,13 +8,28 @@
     "require": "./dist/index.js"
   },
   "scripts": {
-    "dev": "ts-node --transpile-only src/index.ts"
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "npx ts-node -r tsconfig-paths/register src/index.ts",
+    "prebuild": "rimraf ./dist",
+    "build": "npx tsc --build",
+    "prepack": "rimraf ./pkg && npm run build",
+    "pack": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.15.3"
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-typescript": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.0",
+    "@types/node": "^18.15.3",
+    "babel-loader": "^9.1.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "@mono/cache": "workspace:^1.0.0",

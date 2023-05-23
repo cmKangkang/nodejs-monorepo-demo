@@ -13,5 +13,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["__test__", "test"]
+  "exclude": ["**/__test__", "**/test"]
 }
