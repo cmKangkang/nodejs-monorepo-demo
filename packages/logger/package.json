@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "description": "",
   "main": "./lib/index.js",
-  "exports": {
-    "type": "./lib/index.d.ts",
-    "require": "./lib/index.js"
-  },
+  "exports": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "build": "npx tsc",
+    "clean": "rimraf ./lib tsconfig.tsbuildinfo",
+    "prebuild": "npm run clean"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dayjs": "^1.11.7"
   }
 }

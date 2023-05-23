@@ -16,7 +16,7 @@ class Cache {
   }
 
   get(key: string) {
-    return this.cache.get(key)
+    return this.cache.get(key)?.data
   }
 
   set(key: CacheKey, data: any, cacheTime: number) {
@@ -26,8 +26,7 @@ class Cache {
 
     // 添加 data 的同时增加定时器
     // 定时器时间达到则清除
-    const _this = this
-    const target = _this.cache.get(key)
+    const target = this.cache.get(key)
 
     if (target?.timer) {
       clearTimeout(target.timer)
@@ -36,11 +35,11 @@ class Cache {
     let timer: ReturnType<typeof setTimeout> | undefined = undefined
     if (cacheTime > -1) {
       timer = setTimeout(() => {
-        _this.cache.delete(key)
+        this.cache.delete(key)
       }, cacheTime)
     }
 
-    _this.cache.set(key, {
+    this.cache.set(key, {
       data,
       timer
     })

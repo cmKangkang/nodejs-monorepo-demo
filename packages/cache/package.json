@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "./lib/index.js",
-  "exports": {
-    "type": "./lib/index.d.ts",
-    "require": "./lib/index.js"
-  },
+  "exports": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "npx tsc",
+    "clean": "rimraf ./lib tsconfig.tsbuildinfo",
+    "prebuild": "npm run clean"
   },
   "keywords": [],
   "author": "",

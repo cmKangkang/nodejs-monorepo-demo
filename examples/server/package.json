@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "build": "npx tsc --build",
+    "dev": "npx ts-node -r tsconfig-paths/register src/main.ts",
+    "start": "node dist/main.js",
+    "prestart": "npm run build",
+    "prepack": "rimraf ./pkg",
+    "pack": "ncc build src/main.ts -o pkg -t"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mono/cache": "workspace:^",
+    "@mono/logger": "workspace:^",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-formidable": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.17",
+    "@types/express-formidable": "^1.2.0",
+    "@vercel/ncc": "^0.36.1"
+  }
+}

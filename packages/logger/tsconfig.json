@@ -4,9 +4,14 @@
     "rootDir": "src",
     "outDir": "lib",
     "composite": true,
+    // "module": "node16",
+    // "moduleResolution": "node16",
+    // "target": "esnext",
+    "skipLibCheck": true,
     "paths": {
-      "@mono/logger/*": ["../logger/src/*"],
+      "@mono/logger/*": ["../logger/src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["__test__", "test"]
 }

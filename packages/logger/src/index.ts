@@ -1,3 +1,6 @@
+import chalk from 'chalk'
+import dayjs from 'dayjs'
+
 export enum LogLevel {
   error = 0,
   warn = 1,
@@ -28,8 +31,25 @@ class Logger {
 
   private _log(method: LogMethod, args: unknown[]) {
     let level = LogLevel[method]
+    let colorMethod = method as string
+    switch (method) {
+      case LogMethod.error:
+        colorMethod = chalk.red(method)
+        break
+      case LogMethod.warn:
+        colorMethod = chalk.yellow(method)
+        break
+      case LogMethod.info:
+        colorMethod = chalk.green(method)
+        break
+      case LogMethod.debug:
+        colorMethod = chalk.blue(method)
+        break
+    }
+
+    const date = dayjs().format('YYYY/MM/DD-HH:MM:ss')
     if (level <= this.logLevel) {
-      console[method](this.namespace, method, ...args)
+      console[method](date, `[${this.namespace}]`, colorMethod, '-->', ...args)
     }
   }
 
