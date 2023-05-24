@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "test": "pnpm -r run test",
     "lint": "pnpm -r run lint"
   },
@@ -23,6 +24,7 @@
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
     "jest": "^27.3.1",
     "prettier": "^2.5.1",
     "rimraf": "^4.4.1",
