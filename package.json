@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "pretty": "prettier --write '**/*.{js,ts,json,md}'",
+    "pretty": "prettier --write '**/*.{json,md}'",
     "test": "pnpm -r run test",
     "lint": "pnpm -r run lint"
   },
@@ -36,7 +36,7 @@
     "typescript": "^5.0.2"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json,md}": "npm run pretty",
+    "**/*.{json,md}": "npm run pretty",
     "**/*.{js,jsx,ts,tsx}": "npm run lint"
   }
 }
