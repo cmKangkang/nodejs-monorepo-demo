@@ -37,6 +37,6 @@
   },
   "lint-staged": {
     "**/*.{json,md}": "npm run pretty",
-    "**/*.{js,jsx,ts,tsx}": "npm run lint"
+    "**/*.{js,jsx,ts,tsx}": "npm run lint && npm run test"
   }
 }
