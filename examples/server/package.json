@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf ./dist ./pkg",
     "prebuild": "rimraf ./dist",
     "build": "npx tsc --build",
     "dev": "npx ts-node -r tsconfig-paths/register src/main.ts",
     "start": "node dist/main.js",
     "prestart": "npm run build",
-    "prepack": "rimraf ./pkg",
+    "prepack": "rimraf ./pkg & npm run build",
     "pack": "ncc build src/main.ts -o pkg -t",
     "lint": "eslint ./src/** --ext .ts --fix"
   },
