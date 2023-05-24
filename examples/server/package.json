@@ -10,7 +10,8 @@
     "start": "node dist/main.js",
     "prestart": "npm run build",
     "prepack": "rimraf ./pkg",
-    "pack": "ncc build src/main.ts -o pkg -t"
+    "pack": "ncc build src/main.ts -o pkg -t",
+    "lint": "eslint ./src/** --ext .ts --fix"
   },
   "keywords": [],
   "author": "",

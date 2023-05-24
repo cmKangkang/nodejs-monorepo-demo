@@ -14,7 +14,8 @@
     "prebuild": "rimraf ./dist",
     "build": "npx tsc --build",
     "prepack": "rimraf ./pkg && npm run build",
-    "pack": "webpack --config webpack.config.js"
+    "pack": "webpack --config webpack.config.js",
+    "lint": "eslint ./src/** --ext .ts --fix"
   },
   "keywords": [],
   "author": "",
