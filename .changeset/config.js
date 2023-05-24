@@ -1,5 +1,5 @@
 module.exports = {
-  // 配置模板  
+  // 配置模板
   template: `  
     ## {{type}}: {{summary}}  
 
@@ -21,12 +21,16 @@ module.exports = {
     {{/each}}  
     {{/if}}  
   `,
-  // 配置版本前缀  
+  // 配置版本前缀
   changelog: {
-    // 配置版本前缀  
-    "prerelease": "Prerelease Changes for <%= version %> - <%= new Date().toLocaleDateString() %>",
-    "patch": "Patch Changes for <%= version %> - <%= new Date().toLocaleDateString() %>",
-    "minor": "Minor Changes for <%= version %> - <%= new Date().toLocaleDateString() %>",
-    "major": "Major Changes for <%= version %> - <%= new Date().toLocaleDateString() %>"
+    // 配置版本前缀
+    prerelease:
+      'Prerelease Changes for <%= version %> - <%= new Date().toLocaleDateString() %>',
+    patch:
+      'Patch Changes for <%= version %> - <%= new Date().toLocaleDateString() %>',
+    minor:
+      'Minor Changes for <%= version %> - <%= new Date().toLocaleDateString() %>',
+    major:
+      'Major Changes for <%= version %> - <%= new Date().toLocaleDateString() %>'
   }
-}  
+}

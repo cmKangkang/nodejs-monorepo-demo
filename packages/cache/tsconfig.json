@@ -5,7 +5,7 @@
     "outDir": "lib",
     "composite": true,
     "paths": {
-      "@mono/cache/*": ["../cache/src/*"],
+      "@mono/cache/*": ["../cache/src/*"]
     }
   },
   "include": ["src"],
