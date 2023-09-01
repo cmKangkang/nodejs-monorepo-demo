@@ -2,5 +2,5 @@
 const defaultConfig = require('../../jest.config.base')
 
 module.exports = {
-  ...defaultConfig
+  ...defaultConfig,
 }

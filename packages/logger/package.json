@@ -2,28 +2,28 @@
   "name": "@mono/logger",
   "version": "1.0.0",
   "description": "mono logger util",
-  "main": "./lib/index.js",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "exports": "./lib/index.js",
+  "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "prebuild": "npm run clean",
     "build": "npx tsc",
     "clean": "rimraf ./lib tsconfig.tsbuildinfo",
-    "prebuild": "npm run clean",
+    "lint": "eslint ./src/** --ext .ts --fix",
     "prepublishOnly": "npm run build",
-    "lint": "eslint ./src/** --ext .ts --fix"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^18.15.3"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "dependencies": {
     "chalk": "^4.1.2",
     "dayjs": "^1.11.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.3"
   }
 }

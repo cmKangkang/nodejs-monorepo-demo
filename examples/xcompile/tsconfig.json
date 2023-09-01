@@ -8,9 +8,6 @@
       "@mono/cache": ["../../packages/cache/src"]
     }
   },
-  "references": [
-    { "path": "../../packages/cache" },
-    { "path": "../../packages/logger" }
-  ],
+  "references": [{ "path": "../../packages/cache" }, { "path": "../../packages/logger" }],
   "include": ["src"]
 }

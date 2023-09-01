@@ -51,10 +51,10 @@ app.post('/login', (req, res) => {
   }
   cache.set(username, password, 10000)
   res.cookie('login', username, {
-    maxAge: 10000
+    maxAge: 10000,
   })
   res.cookie('password', password, {
-    maxAge: 10000
+    maxAge: 10000,
   })
   res.redirect('/')
 })

@@ -2,23 +2,23 @@
   "name": "@mono/cache",
   "version": "1.0.0",
   "description": "mono cache util",
-  "main": "./lib/index.js",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "exports": "./lib/index.js",
+  "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "test": "jest",
+    "prebuild": "npm run clean",
     "build": "npx tsc",
     "clean": "rimraf ./lib tsconfig.tsbuildinfo",
-    "prebuild": "npm run clean",
+    "lint": "eslint ./src/** --ext .ts --fix",
     "prepublishOnly": "npm run build",
-    "lint": "eslint ./src/** --ext .ts --fix"
+    "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.3"
   }

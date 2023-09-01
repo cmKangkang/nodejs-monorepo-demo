@@ -2,25 +2,29 @@
   "name": "@mono/xcompile",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/index.js",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "exports": {
     "type": "./dist/index.d.ts",
     "require": "./dist/index.js"
   },
+  "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf ./dist ./pkg",
-    "prestart": "npm run build",
-    "start": "node dist/index.js",
-    "dev": "npx ts-node -r tsconfig-paths/register src/index.ts",
     "prebuild": "rimraf ./dist",
     "build": "npx tsc --build",
+    "clean": "rimraf ./dist ./pkg",
+    "dev": "npx ts-node -r tsconfig-paths/register src/index.ts",
+    "lint": "eslint ./src/** --ext .ts --fix",
     "prepack": "rimraf ./pkg && npm run build",
     "pack": "webpack --config webpack.config.js",
-    "lint": "eslint ./src/** --ext .ts --fix"
+    "prestart": "npm run build",
+    "start": "node dist/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "@mono/cache": "workspace:*",
+    "@mono/logger": "workspace:*"
+  },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.3",
@@ -32,9 +36,5 @@
     "babel-loader": "^9.1.2",
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1"
-  },
-  "dependencies": {
-    "@mono/cache": "workspace:*",
-    "@mono/logger": "workspace:*"
   }
 }

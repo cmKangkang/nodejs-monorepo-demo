@@ -2,41 +2,45 @@
   "name": "@mono/repo",
   "version": "0.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
-  "scripts": {
-    "prepare": "husky install",
-    "pretty": "prettier --write '**/*.{json,md}'",
-    "test": "pnpm -r run test",
-    "lint": "pnpm -r run lint"
-  },
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "lint": "eslint ./. --ext .js,.jsx,.ts,.tsx --fix",
+    "prepare": "husky install",
+    "pretty": "prettier --write '**/*.{json,md}'",
+    "test": "pnpm -r run test"
+  },
+  "lint-staged": {
+    "**/*.{json,md}": [
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
+    "@cmkk/eslint-config-ts": "^0.0.2",
+    "@cmkk/prettier-config": "^0.0.2",
+    "@commitlint/config-conventional": "^17.7.0",
     "@jest/globals": "^29.5.0",
     "@types/node": "^12.20.55",
-    "@typescript-eslint/eslint-plugin": "^5.58.0",
-    "@typescript-eslint/parser": "^5.58.0",
+    "commitlint": "^17.7.1",
     "eslint": "^8.38.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.0",
     "jest": "^27.3.1",
     "lint-staged": "^13.2.2",
-    "prettier": "^2.5.1",
+    "prettier": "^3.0.3",
     "rimraf": "^4.4.1",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.0.2"
-  },
-  "lint-staged": {
-    "**/*.{json,md}": "npm run pretty",
-    "**/*.{js,jsx,ts,tsx}": "npm run lint && npm run test"
+    "typescript": "^4.9.5"
   }
 }

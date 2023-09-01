@@ -4,6 +4,15 @@
 
 ```bash
 pnpm i
+
+# lint js file
+pnpm run lint
+
+# pretty json and md
+pnpm run pretty
+
+# run test
+pnpm run test
 ```
 
 ## changeset
@@ -100,10 +109,7 @@ xcompile、cache、logger 均为 typescript 项目，xcompile 项目依赖 cache
    ```json
    {
      // ...
-     "references": [
-       { "path": "../../packages/cache" },
-       { "path": "../../packages/logger" }
-     ]
+     "references": [{ "path": "../../packages/cache" }, { "path": "../../packages/logger" }]
    }
    ```
    同时，为了在子项目未编译时仍能正确的识别类型，需为子项目配置 alias，指向其 ts 入口文件：

@@ -32,7 +32,7 @@ class Cache {
       clearTimeout(target.timer)
     }
 
-    let timer: ReturnType<typeof setTimeout> | undefined = undefined
+    let timer: ReturnType<typeof setTimeout> | undefined
     if (cacheTime > -1) {
       timer = setTimeout(() => {
         this.cache.delete(key)
@@ -41,7 +41,7 @@ class Cache {
 
     this.cache.set(key, {
       data,
-      timer
+      timer,
     })
   }
 
@@ -52,7 +52,7 @@ class Cache {
   clear(key?: CacheKey | CacheKey[]) {
     if (key) {
       const cacheKeys = Array.isArray(key) ? key : [key]
-      cacheKeys.forEach(cacheKey => this.cache.delete(cacheKey))
+      cacheKeys.forEach((cacheKey) => this.cache.delete(cacheKey))
     } else {
       this.cache.clear()
     }

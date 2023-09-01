@@ -6,5 +6,5 @@ module.exports = {
   testEnvironment: 'node',
   coverageReporters: ['json-summary', 'text'],
   testMatch: ['**/{test,__test__}/**/*.{test,spec}.[jt]s?(x)'],
-  verbose: true
+  verbose: true,
 }
